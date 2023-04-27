@@ -1,0 +1,238 @@
+.mainOrder{
+  display: flex; flex-direction: column; gap: 10px;
+  height: 100%;
+  &__title{
+    transition: 0.3;
+    color: $darkGray;
+    &.active{color: #000;}
+    &-box{
+      display: flex; gap: 20px;
+      font-size: 30px;
+      font-weight: 600;
+    }
+    &.blue{color: $mainBlue; opacity: 0.7; &:hover{opacity: 1; color: $mainBlue;}}
+    &:hover{color: #000;}
+  }
+
+  &__select{
+    transition: 0.3s;
+    outline: 2px solid $darkGray;
+    width: 15%;
+    color: $darkGray;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+
+    &.active{
+      border-radius: 10px 10px 0 0;
+      .mainOrder__select-list{
+        height: fit-content;
+        opacity: 1;
+        pointer-events: all;
+        top: 100%;
+      }
+    }
+
+    &-button{
+      z-index: 2;
+      width: 100%;
+      padding: 5px;
+    }
+    &-list{
+      transition: 0.3s;
+      position:absolute;
+      top: 0%; left: 0;
+      width: 100%; height: 0;
+      opacity: 0;
+      pointer-events: none;
+      background-color: #FFF;
+      outline: 2px solid $darkGray;
+      border-radius: 0 0 10px 10px;
+    }
+    &-item{
+      padding: 5px;
+      transition: 0.3s;
+      border-bottom: 1px solid $darkGray;
+      &:last-child{
+        border: none;
+      }
+      &.selected{ 
+        background-color: $grayColor;
+      }
+    }
+  }
+
+  &__year{
+    padding: 5px 0;
+    text-align: center;
+    background-color: $grayColor;
+    border-radius: 10px;
+    transition: 0.3s;
+    padding: 5px;
+    display: flex; gap: 5px;
+    &-box{
+      display: flex; gap: 10px;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+        }
+      &{
+        -ms-overflow-style: none;  /* IE и Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+    }
+    &:hover{
+      background-color: $darkGray;
+    }
+  }
+
+  &__list{
+    display: flex; flex-direction: column; gap: 20px;flex: 1 1;
+    &-und{
+      width: 100%; height: 100%;
+      display: flex; justify-content: center; align-items: center; flex-direction: column;
+      font-size: 25px; 
+      color: $darkGray;
+    }
+  }
+
+  &__item{
+    &-top{
+      padding: 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      background-color: $grayColor;
+      &-left{
+        display: flex; flex-direction: column;
+        gap: 10px;
+      }
+      &-title{
+        font-size: 20px;
+        font-weight: 700;
+      }
+      &-number{
+        color: $mainBlue;
+      }
+    }
+    &-bottom{
+      padding: 20px;
+      display: flex; justify-content: space-between; gap: 10px;
+      min-height: fit-content;
+      &-left{
+        display: flex; flex-direction: column; justify-content: space-between;
+      }
+      &-right{
+        flex: 0 0 60%;
+        display: flex; align-items: center; justify-content: center;
+        & picture{
+          width: 20%;
+          position: relative;
+        }
+        & img{
+          position:absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+      &-title{
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      &-text{
+        color: $darkGray;
+      }
+      &-button{
+        border-radius: 10px;
+        color: $mainBlue;
+        background-color: $liteGreen;
+        width: fit-content;
+        padding: 5px 10px;
+        font-weight: 700;
+        font-size: 12px;
+        transition: 0.3s;
+        &:hover{
+          background-color: rgba(2, 100, 100, 0.16);;
+        }
+      }
+    }
+
+    &-prise{
+      font-size: 12px;
+
+      & span{
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px){
+  .mainOrder{
+    &__item-bottom-button{
+    margin-top: 10px;
+    }
+    &__list{min-height: 200px;}
+    &__list-und{
+      flex: 1 1;
+      font-size: 16px;
+    }
+    &__title-box{
+      font-size: 20px;
+    }
+}
+}
+@media (max-width:767.98px){
+   .mainOrder{
+    &__select{width: 100%;}
+    &__title{font-size: 20px;}
+    &__select-button{padding: 2.5px;}
+    &__item{
+      &-top{
+        padding: 10px;
+        &-title{font-size: 16px;}
+        &-number{font-size: 12px;}
+        &-right{font-size: 10px; & span{font-size: 16px;}}
+      }
+      &-bottom{
+        padding: 10px;
+        &-title{font-size: 14px; margin-bottom: 10px;}
+        &-text{font-size: 12px;}
+        &-button{font-size: 10px;}
+        &-right picture{width: 50%;}
+      }
+    }
+    &__list{min-height: 200px;}
+    &__list-und{
+      font-size: 12px;
+      & a{font-size: 12px;}
+    }
+  }
+}
+@media (max-width: 374.98px){
+  .mainOrder{
+    &__select{width: 100%;}
+    &__title{font-size: 16px;}
+    &__year{font-size: 12px;}
+    &__item{
+      &-top{
+        &-title{font-size: 12px;}
+        &-number{font-size: 10px;}
+        &-right{font-size: 8px; & span{font-size: 12px;}}
+      }
+      &-bottom{
+        &-title{font-size: 10px;}
+        &-text{font-size: 8px;}
+        &-button{font-size: 8px;}
+        &-right picture{width: 50%;}
+      }
+      &-prise{
+        display: flex;flex-direction: column; align-items: center; justify-content: space-between;
+        gap: 10px; 
+        font-size: 10px;
+      }
+    }
+  }
+}
