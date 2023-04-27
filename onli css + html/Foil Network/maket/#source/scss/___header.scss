@@ -1,0 +1,29 @@
+.wrapper{
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+[class*="__container"]{
+max-width: 1200px;
+padding: 0 15px;
+margin:0 auto;
+}
+@media (max-width: 1230px){
+/*PC*/
+[class*="__container"]{
+		max-width: 970px;
+}
+}
+@media (max-width: 991.98px){
+/*TABLET*/
+[class*="__container"]{
+		max-width: 750px;
+}
+}
+@media (max-width: 767.98px){
+/*MOBILE*/
+[class*="__container"]{
+	max-width: none;
+}
+}
