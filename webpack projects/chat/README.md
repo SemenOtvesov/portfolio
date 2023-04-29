@@ -1,1 +1,1 @@
-Ссылка на хостинг с данным проектом: [a link](#chat-491qn1ff9-semenotvesov.vercel.app)
+Ссылка на хостинг с данным проектом: [a chat-491qn1ff9-semenotvesov.vercel.app]
