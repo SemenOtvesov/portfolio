@@ -1,1 +1,1 @@
-Ссылка на хостинг с данным проектом: https://semenotvesov.github.io/flowers/
+Ссылка на хостинг с данным проектом:  [тык](https://semenotvesov.github.io/flowers/)
