@@ -1,0 +1,16 @@
+$grayColor: #e7e5e5;
+$darkGray: #a8a7a7;
+$velvetBlack : #252A34;
+$pungentYellow:#fecc32;
+$brightGreen: #10c44c;
+$redLine: #F38181;
+@import "____initialStyle";
+@import "_generalElements";
+@import "___header";
+@import "___nav";
+@import "__mainRout";
+@import "__catalogRoutes";
+@import "__companyRoute";
+@import "__designersRoute";
+@import "__contactsRoute";
+@import "_footer";
