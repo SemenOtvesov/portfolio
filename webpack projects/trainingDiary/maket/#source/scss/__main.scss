@@ -1,0 +1,964 @@
+.main {
+  display: flex; justify-content: space-between;
+
+  &__right {
+    flex: 0 0 25%;
+    width: 25%;
+    height: 100%;
+    display: flex; flex-direction: column; justify-content: space-between;
+    gap: 20px;
+    border-right: 2px solid $brightGreen;
+    padding: 20px;
+    position: relative;
+
+    &-resize{
+      position:absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #00000021;
+      z-index: 1000;
+      transition: 0.3s;
+
+      opacity: 0;
+      pointer-events: none;
+
+      &.active{
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &-title{
+      font-size: 1.5em;
+      font-weight: 600;
+
+      &-box{
+        display: flex; justify-content: space-between; gap: 10px; align-items: center;
+        padding: 0 10px;
+        & img{
+          width: 2em; height: 1em;
+          object-fit: cover;
+          z-index: 1000000;
+        }
+      }
+      &-button{
+        padding: 10px 20px;
+        background-color: $redLine;
+        border-radius: 10px;
+        color: #fff;
+        font-weight: 600;
+
+        &.green{
+          background-color: $brightGreen;
+        }
+        &-box{display: flex; gap: 10px;}
+      }
+    }
+
+    &-list {
+      overflow: auto;
+      flex: 1 1;
+      display: flex; flex-direction: column; gap: 10px;
+
+      &::-webkit-scrollbar{
+        width: 10px;
+
+        &-thumb{
+          border-radius: 5px;
+          background-color: $brightGreen;
+        }
+      }
+    }
+
+    &-warn{
+      height: 100%;
+      display: flex; justify-content: center; align-items: center;
+      font-size: 1.5em;
+      text-align: center;
+    }
+  
+    &-item {
+      display: flex; gap: 20px; justify-content: space-between; align-items: center;
+      margin: 10px;
+      padding: 10px;
+
+      &-preview {
+        display: block;
+        position: relative;
+        min-height: 2em; min-width: 2em;
+        
+        & img{
+          position:absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+    
+      &-content {
+        flex: 0 0 80%;
+        display: flex; flex-direction: column; gap: 10px;
+        overflow: hidden;
+      }
+    
+      &-title {
+        font-weight: 600;
+        font-size: 1.5em;
+        max-height: 1em;
+        text-align: right;
+
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    
+      &-text {
+        text-align: right;
+        font-size: 1.2em;
+      }
+
+      &.active{
+        background-color: $limeGreen;
+        border-radius: 10px;
+        color: #fff;
+      }
+    }
+  
+    &-button {
+      padding: 10px 20px;
+      background-color: $limeGreen;
+      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+  &__left {
+    flex: 0 0 70%;
+    position: relative;
+
+    &-warn{
+      flex: 1 1 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 600;
+    }
+    &-content{
+      height: 100%;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    &-list {
+      display: flex; flex-direction: column; gap: 10px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 10px 0;
+      flex: 1 1;
+      transition: 0.3s;
+
+      &::-webkit-scrollbar{
+        width: 10px;
+
+        &-thumb{
+          border-radius: 5px;
+          background-color: $brightGreen;
+        }
+      }
+
+      &-box{
+        height: 40%;
+        border: 3px solid $brightGreen;
+        border-radius: 10px;
+
+        display: flex; flex-direction: column;
+      }
+    }
+  
+    &-item {
+      padding: 10px 0;
+      border-bottom: 1px solid $brightGreen;
+      position: relative;
+
+      &-title {
+        font-size: 1.4em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding: 0 20px;
+      }
+    
+      &-content {
+        display: flex; gap: 10px; flex-direction: column;
+        font-size: 1.2em;
+        &-main{display: flex; align-items: center; gap: 20px; padding: 0 20px;}
+      }
+    
+      &-button {
+        padding: 5px 10px; 
+        border-radius: 10px;
+        background-color: $brightGreen;
+        color: #fff;
+        font-weight: 600; 
+
+        &-box{
+          display: flex; gap: 20px;
+        }
+      }
+    
+      &-sublist {
+        transition: 0.3s;
+        opacity: 0;
+        height: 0;
+        margin: -20px 0 0 0;
+        display: flex; flex-direction: column; gap: 10px;
+        pointer-events: none;
+
+        border-radius: 10px;
+        width: fit-content;
+
+        &.active{
+          opacity: 1;
+          pointer-events: all;
+          height: fit-content;
+          margin: 0  20px 0 20px;
+          width: 100%;
+
+          & > .main__left-item-subitem{
+            width: fit-content;
+          }
+        }
+      }
+    
+      &-subitem {
+        display: flex; gap: 20px; justify-content: space-between; align-items: center;
+        padding: 5px;
+        width: 100%;
+        border: 1px solid $brightGreen;
+        border-radius: 10px;
+        padding: 10px;
+        position: relative;
+
+        &-text{
+          &:nth-child(1){width: 7em;}
+          &:nth-child(2){width: 5em;}
+          &:nth-child(3){width: 11em; margin-right: 20px;}
+          & span{font-weight: 600;}
+
+          &-box{
+            display: flex; flex-direction: column; gap: 10px;
+          }
+        }
+        &-close{
+          position:absolute;
+          top: 50%; right: 0;
+          transform: translate(-50%, -50%);
+          width: fit-content; height: fit-content;
+          & span{
+              display: block;
+              position: relative;
+              width: 20px; height: 20px;
+              cursor: pointer;
+              &::before, &::after{
+                  transition: 0.3s;
+                  top: 50%; left: 0;
+                  position: absolute;
+                  height: 2px; width: 100%;
+                  transition: 0.3s ease;
+                  background-color: darkGray;
+                  border-radius: 2px;
+                  content: '';
+              }
+              &::before{transform: rotate(-45deg) }
+              &::after{transform: rotate(45deg) }
+            }
+            & span:hover{
+              &::before, &::after{background-color: #000;}
+          }
+        }
+      }
+
+      &-close{
+        position:absolute;
+        top: 0; right: 0;
+        width: fit-content; height: fit-content;
+        transform: translate(-50%, 50%);
+        & span{
+            display: block;
+            position: relative;
+            width: 20px; height: 20px;
+            cursor: pointer;
+            &::before, &::after{
+                transition: 0.3s;
+                top: 50%; left: 0;
+                position: absolute;
+                height: 2px; width: 100%;
+                transition: 0.3s ease;
+                background-color: darkGray;
+                border-radius: 2px;
+                content: '';
+            }
+            &::before{transform: rotate(-45deg) }
+            &::after{transform: rotate(45deg) }
+          }
+          & span:hover{
+            &::before, &::after{background-color: #000;}
+        }
+      }
+
+      &-popap{
+        border-top: 1px solid $darkGray;
+        height: 0;
+        opacity: 0;
+        transition: 0.3s;
+        display: flex; align-items: center; justify-content: space-between;
+        pointer-events: none;
+
+        &-item{
+          display: flex; gap: 10px; align-items: center;
+          &-input{
+            transition: 0.3s;
+            border: 1px solid $brightGreen;
+            border-radius: 10px;
+            padding: 5px;
+            width: 11em;
+            &-box{
+              display: flex; gap: 20px;
+            }
+            &.warning{
+              border-color: $redLine;
+              transform: translate(10px);
+            }
+          }
+          &-button{
+            background-color: $brightGreen;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+          }
+        }
+
+        &.active{
+          height: fit-content;
+          opacity: 1;
+          padding: 10px 20px;
+          pointer-events: all;
+        }
+      }
+    }
+
+    &-button{
+      background-color: $brightGreen;
+      padding: 10px 20px;
+      color: #fff;
+      font-weight: 600;
+      position: relative;
+      width: 100%;
+      text-align: center;
+
+      &-popap{
+        transition: 0.3s;
+        position:absolute;
+        top: 0; left: 0;
+        width: 100%; height: fit-content;
+        border-radius: 10px 10px 0 0;
+        border: 2px solid $brightGreen;
+        background-color: #ffffff;
+        display: flex; justify-content: space-between; align-items: center;
+        overflow: hidden;
+        z-index: 1;
+        
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(0, 0);
+
+        &-input{
+          transition: 0.3s;
+          border: 2px solid $brightGreen;
+          padding: 10px;
+          width: 16em;
+          margin: 5px;
+          border-radius: 10px;
+          background-color: #00000000;
+
+          & input{
+            width: 100%;
+          }
+
+          &-list{
+            transition: 0.3s;
+            position: absolute;
+            height: fit-content;
+            max-height: calc(3em + 60px);
+            overflow: auto;
+            color: #000;
+            z-index: 100;
+            background-color: #fff;
+            border: 2px solid $brightGreen;
+            border-radius: 0 0 10px 10px;
+            border-top: none;
+            transform: translate(0, -10px);
+            pointer-events: none;
+
+            opacity: 0;
+
+            &::-webkit-scrollbar{
+              width: 10px;
+              &-thumb{
+                background-color: $brightGreen;
+                border: 3px solid #fff;
+                border-radius: 10px;
+              }
+            }
+
+            &.active{
+              opacity: 1;
+              transform: translate(0, 0);
+              pointer-events: all;
+            }
+
+            & li{
+              padding: 10px;
+              border-top: 1px solid $brightGreen;
+              &.selected{
+                font-weight: 600;
+              }
+            }
+          }
+
+          &.active{
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+          }
+        }
+        &-button{
+          background-color: $brightGreen;
+          margin: 5px;
+          padding:  10px 20px;
+          color: #fff;
+          font-weight: 600;
+          border-radius: 10px;
+          width: 25%;
+        }
+
+        &.warning{
+          .main__left-button-popap-input{
+            border-color: $redLine;
+            transform: translate(10px);
+          }
+        }
+      }
+
+      &.active{
+        .main__left-button-popap{
+          opacity: 1;
+          pointer-events: all;
+          transform: translate(0, -100%);
+        }
+      }
+    }
+
+    &-chart{
+      &-box{
+        height: 100%;
+        border-radius: 10px;
+        border: 3px solid $brightGreen;
+        position: relative;
+
+        display: flex; align-items: center; justify-content: space-between; flex-direction: column;
+      }
+      &-container{
+        display: flex; justify-content: space-between; gap: 20px;
+        height: 50%;
+        margin-bottom: 50px;
+      }
+      &-title{
+        font-weight: 600;
+        font-size: 1.25em;
+        padding: 5px;
+      }
+      &-canvasBox{
+        height: 80%;
+        width: 100%;
+
+        display: flex; align-items: center; justify-content: center;
+      }
+      &-checkbox{
+        display: flex; gap: 10px; align-items: center; justify-content: center;
+        flex: 0 0 20%;
+
+        &-box{
+          width: 100%;
+          padding: 10px 10px 5px 10px;
+          display: flex; justify-content: space-between; gap: 5%;
+          overflow: auto;
+
+          &::-webkit-scrollbar{
+            height: 10px;
+            &-thumb{
+              background-color: $brightGreen;
+              border-radius: 10px;
+              border: 3px solid #fff;
+            }
+          }
+          &.around{
+            justify-content: space-around;
+          }
+        }
+
+        &-title{
+          font-weight: 600;
+        }
+        
+        &-inputBox{
+          height: 1.5em;
+          width: 1.5em;
+          background-color: $brightGreen;
+          position: relative;
+          display: flex; align-items: center; justify-content: center;
+          border-radius: 2px;
+          & input{
+            position:absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
+          }
+        }
+        & span{
+          display: block;
+          position: relative;
+          width: 15px; height: 15px;
+          cursor: pointer;
+          transition: 0.3s;
+          opacity: 0;
+          
+          &::before, &::after{
+              transition: 0.3s;
+              top: 50%; left: 0;
+              position: absolute;
+              height: 2px; width: 100%;
+              transition: 0.3s ease;
+              background-color: #fff;
+              border-radius: 2px;
+              content: '';
+          }
+          &::before{
+            transform: rotate(-45deg) translate(45%, 110%); 
+            width: 60%;
+          }
+          &::after{
+            transform: rotate(45deg) translate(10%,-80%);
+            width: 40%;
+          }
+        }
+        &.active span{
+          opacity: 1;
+        }
+      }
+    }
+
+    &-training{
+      opacity: 0;
+      position:absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+
+      display: flex; justify-content: space-between; flex-direction: column; gap: 20px;
+      padding: 20px;
+    }
+
+    pointer-events: none;
+    transition: 0.3s;
+    transform: translate(-10px);
+
+    &.active{
+      pointer-events: all;
+      transform: translate(0);
+
+      .main__left-training{opacity: 1;}
+    }
+
+    &.addTraining{
+      pointer-events: all;
+      transform: translate(0);
+      height: fit-content;
+      min-height: 100vh;
+
+      .main__left {
+        &-addTraining-box {
+          opacity: 1;
+          position:absolute;
+          top: 0; left: 0;
+          width: 100%; height: fit-content;
+          pointer-events: all;
+
+          display: flex; flex-direction: column; gap: 30px;
+        }
+    
+        &-title {
+          font-size: 1.5em;
+        }
+    
+        &-input {
+          padding: 10px;
+          border: 2px solid $limeGreen;
+          border-radius: 10px;
+          width: 25em;
+          margin-bottom: 10px;
+          font-size: 1.25em;
+          max-width: 100%;
+
+          &.file {
+            border: none;
+            margin: 0;
+            position:absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 10;
+            border-radius: 10px;
+            opacity: 0;
+          }
+
+          &-text{
+            background-color: $limeGreen;
+            font-weight: 600;
+            padding: 10px;
+            font-size: 0.8em;
+            color: #fff;
+            border-radius: 10px;
+            width: 10em;
+          }
+        }
+
+        &-select {
+          position: relative;
+          border: 2px solid $limeGreen;
+          width: 25em;
+          padding: 10px;
+          border-radius: 10px;
+          font-size: 1.25em;
+          max-width: 100%;
+
+          & span{
+              display: block;
+              position: absolute;
+              right: 0; top: 50%;
+              transform: translate(-10px, -50%);
+              width: 0.5em; height: 0.5em;
+              cursor: pointer;
+              &::before, &::after{
+                  transition: 0.3s;
+                  top: 50%; left: 0;
+                  position: absolute;
+                  height: 2px; width: 100%;
+                  transition: 0.3s ease;
+                  background-color: darkGray;
+                  border-radius: 2px;
+                  content: '';
+              }
+              &::before{transform: rotate(-45deg) translate(30%, 50%) }
+              &::after{transform: rotate(45deg) translate(-30%, 50%)}
+          }
+
+          &-button {
+            background-color: #fff;
+            font-size: 1.25em;
+          }
+      
+          &-list {
+            transition: 0.3s;
+            position:absolute;
+            top: 100%; left: 0;
+            width: 100%; height: fit-content;
+            outline: 2px solid $limeGreen;
+            border-radius: 0 0 10px 10px;
+            background-color: #fff;
+            z-index: 2;
+
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(0, -10px);
+          }
+      
+          &-item {
+            border-bottom: 1px solid $limeGreen;
+            padding: 10px;
+            display: flex; gap: 10px;
+
+            &:nth-last-child(1){border: 0;}
+
+            &.file{
+              position: relative;
+              width: fit-content;
+              text-align: center;
+            }
+
+            &.selected{font-weight: 600;}
+
+            &-icon{
+              position: relative;
+              display: flex; align-items: center; justify-content: center;
+              width: 1em; height: 1em;
+
+              & img{
+                position:absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+
+          &.active{
+            border-radius: 10px 10px 0 0;
+            border-bottom: 0;
+
+            & > span{
+              &::before{transform: rotate(45deg) translate(30%, -50%) }
+              &::after{transform: rotate(-45deg) translate(-30%, -50%)}
+            }
+            & > ul{
+              opacity: 1;
+              pointer-events: all;
+              transform: translate(0, 0);
+            }
+          }
+        }
+
+        &-button{
+          transition: 0.3s;
+          width: 10em;
+          background-color: $limeGreen;
+          padding: 10px 20px;
+          font-size: 1.25em;
+          color: #fff;
+          border-radius: 10px;
+          font-weight: 600;
+          position: relative;
+
+          &-error{
+            transition: 0.3s;
+            position:absolute;
+            top: 0; left: 100%;
+            width: 15em; height: 100%;
+            background-color: $redLine;
+            border-radius: 0 10px 10px 0;
+            display: flex; align-items: center; justify-content: center;
+
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-10px);
+          }
+        }
+      }
+    }
+
+    &-addTraining-box{
+      padding: 20px;
+      opacity: 0;
+      position:absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+
+      &.error{
+        .main__left-button{
+          border-radius: 10px 0 0 10px;
+          &-error{
+            opacity: 1;
+            transform: translate(0);
+          }
+        }
+      }
+      &.errorName{
+        .main__left-button{
+          background-color: $redLine;
+          transform: translate(10px);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1170px){
+  .main{
+    &__right{
+      font-size: 10px;
+      &-item{
+        padding: 10px;
+        gap: 10px;
+      }
+      &-title-button{
+          padding: 5px 10px;
+      }
+      &-title{font-size: 14px;}
+    }
+    &__left{
+      font-size: 10px;
+      &-item{
+        &-title{margin-bottom: 10px;}
+        &-button{font-size: 10px;}
+        &-subitem{font-size: 11px;}
+        &-popap{
+          &-item{
+            justify-content: space-between;
+            &-input-box{
+              flex-direction: column;
+              gap: 10px;
+            }
+          }
+        }
+      }
+      &-button{
+        font-size: 10px; padding: 5px 10px;
+        &-popap-input{
+          font-size: 10px; padding: 5px 5px; & input{font-size: 10px;}
+          &-list{
+            font-size: 10px;
+            & li {padding: 5px; font-size: 10px;}
+          }
+        }
+        &-popap-button{font-size: 12px; padding: 5px 10px;}
+      }
+      &-chart{
+        &-checkbox-box{
+          padding: 5px 5px 3px 5px;
+        }
+      }
+      &.addTraining{
+        .main__left{
+          &-addTraining-box{gap: 15px;}
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991.98px){
+  .main{
+    position: relative;
+    &__right{
+      flex: 0 0 100%;
+      border: none;
+      font-size: 16px;
+
+      &-item{padding: 20px;}
+      &-title{padding: 0;}
+    }
+
+    &__left{
+      position:absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 10;
+      background-color: #fff;
+      font-size: 12px;
+      transform: translate(100%);
+
+      &-item{
+        &-title{margin-bottom: 10px;}
+        &-button{font-size: 14px;}
+        &-subitem{font-size: 14px;}
+      }
+      &-button-popap{
+        &-input{font-size: 14px;}
+      }
+    }
+  }
+}
+@media (max-width:767.98px){
+  .main{
+    &__right{
+      padding: 10px 0;
+      font-size: 10px;
+      &-item{
+        padding: 10px;
+      }
+      &-title-button{
+        padding: 5px;
+        font-size: 11px;
+        &-box{
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+    }
+    &__left{
+      padding: 10px 0;
+      font-size: 10px;
+      height: 100%;
+      &-item{
+        &-title{margin-bottom: 10px; padding: 0 10px;}
+        &-button{
+          font-size: 10px;
+          &-box{
+            flex-direction: column;
+            gap: 5px;
+          }
+        }
+        &-sublist{
+          &.active{
+            margin: 0 10px;
+            & > .main__left-item-subitem{
+              width: calc(100% - 20px)
+            }
+          }
+        }
+        &-subitem{
+          font-size: 11px;
+          &-text{
+            &:nth-child(1){width: 70%;}
+            &:nth-child(2){width: 100%;}
+            &-box{width: 100%;margin-right: 25px;}
+          }
+        }
+        &-content-main{justify-content: space-between; padding: 0 10px;}
+        &-close{transform: translate(-25%, 0);}
+        &-popap{
+          flex-direction: column;
+          gap: 10px;
+          &-item{width: 100%; &-button{width: 100%;}}
+          &.active{padding: 10px;}
+        }
+      }
+      &-list{
+        padding: 5px 0;
+        overflow-x: hidden;
+        &::-webkit-scrollbar{
+          width: 5px;
+  
+          &-thumb{
+            border-radius: 5px;
+            background-color: $brightGreen;
+          }
+        }
+      }
+      &-chart{
+        &-container{
+          flex-direction: column;
+        }
+        &-box{
+          
+        }
+      }
+      &-training{
+        overflow: auto;
+        padding: 10px 0;
+      }
+      &-content{
+        gap: 10px;
+      }
+      &-button-popap{
+        &-input{
+          font-size: 10px; padding: 5px;
+          & input{font-size: 10px;}
+        }
+        &-button{width: fit-content;}
+      }
+
+      &.addTraining{
+        .main__left{
+          &-button{font-size: 1em;}
+        }
+      }
+    }
+  }
+}
