@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+        "@js/*": ["maket/js/*"],
+        "@maket/*": ["maket/*"],
+        "@docs/*": ["docs/*"],
+        "@types/*": ["maket/js/types/*"],
+        "@redux/*": ["maket/js/redux/*"],
+        "@components/*": ["maket/js/components/*"],
+        "@middleComponents/*": ["maket/js/components/middleComponents/*"],
+        "@componentModules/*": ["maket/js/components/componentModules/*"],
+        "@mainFunctions/*": ["maket/js/mainFunctions/*"],
+        "@events/*": ["maket/js/mainFunctions/events/*"],
+        "@setDOMfn/*": ["maket/js/mainFunctions/setDOMfn/*"],
+        "@firebaseFolder/*": ["maket/js/firebaseFolder/*"],
+    }
+  },
+}
