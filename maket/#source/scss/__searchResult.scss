@@ -1,0 +1,194 @@
+.searchResult {
+  padding: 40px;
+  font-size: 16px;
+
+  display: flex; flex-direction: column; gap: 40px;
+
+  &__param {
+    display: flex; flex-direction: column; gap: 15px;
+    &-box {
+      display: flex;
+      gap: 40px;
+    }
+
+    &-title {color: $signature;}
+  }
+
+  &__card{
+    &-line{
+      display: flex; gap: 40px; justify-content: space-around;
+    }
+    &-image{
+      aspect-ratio: 1.9 / 1; 
+      &.loading-img{height: auto;}
+    }
+
+    &-box {
+      flex: 0 0 22%;
+      max-width: 260px;
+      padding: 20px 15px;
+      background-color: #fff;
+      border-radius: 15px;
+  
+      display: flex; flex-direction: column; gap: 15px;
+    }
+  
+    &-title {
+      &-box{
+        font-size: 1.125em;
+        color: $signature;
+        display: flex; justify-content: space-between;
+      }
+      &.bold{font-weight: 800;}
+    }
+  
+    &-preview {
+      display: block;
+      width: 100%; height: 8.75em;
+      background-color: $background;
+      position: relative;
+      border-radius: 10px;
+
+      & img{
+        position:absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%; height: 64%;
+
+        mix-blend-mode: multiply;
+        filter: hue-rotate(125deg);
+      }
+      &.loading-img{width: 100%; height: 8.75em}
+      & > .img-mask{z-index: 0;}
+    }
+  
+    &-text {
+      font-size: 1.125em;
+      &.gray{color: $signature;}
+    }
+  
+    &-prise {
+      font-size: 1.25em;
+      font-weight: 700;
+      color: $mainBlue;
+      &.gray{color: $signature;}
+    }
+  
+    &-button {
+      transition: 0.3s;
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      font-weight: 600;
+      font-size: 1em;
+      min-width: 5em;
+
+      & span{
+        transition: 0.3s;
+        display: block;
+        padding: 10px;
+        background-color: #fff;
+        color: $mainBlue;
+        text-align: center;
+        opacity: 1;
+      }
+
+      position: relative;
+
+      border: 1px solid $mainBlue;
+      text-transform: uppercase;
+
+      &-text{
+        font-size: 0.875em; 
+        color: $mainBlue; 
+        text-align: start; 
+        background-color: #fff; 
+        line-height: 1;
+      }
+      &-box{
+        display: flex; 
+        justify-content: space-between; 
+        gap: 10px; 
+        align-items: center;
+      }
+
+      &.blue span{
+        background-color: $mainBlue; 
+        color: #fff;
+      }
+      &.gray{width: fit-content; border-color: $signature;   & span{color: $signature;}}
+
+      &-hiddenText{
+        transition: 0.3s;
+        position:absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        
+        display: flex; justify-content: center; align-items: center; z-index: -1;
+        background-color: $mainBlue; color: #fff;
+      }
+
+
+      &.hiddenButton:hover{
+        & span{opacity: 0;}
+        & div{
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  &__button{
+    padding: 20px 100px;
+    background-color: $mainBlue;
+    color: #fff;
+    font-size: 1.25em;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+}
+
+
+@media (max-width: 1440px){
+  .searchResult__card-line{justify-content: space-between;}
+}
+@media (max-width: 1170px){
+  .searchResult{
+    &__card{
+      &-box{
+        flex: 0 0 45%;
+        max-width: 330px;
+      }
+      &-preview{
+      height: 10em;
+      }
+      &-line{justify-content: space-around;}
+    }
+  }
+}
+@media (max-width: 991.98px){
+  .searchResult{
+    padding: 20px;
+    &__param{
+      & > div{width: 100%;}
+      flex: 0 0 45%;
+      &-box{justify-content: space-between;}
+    }
+    &__card-line{justify-content: space-between;}
+  }
+}
+@media (max-width:767.98px){
+  .searchResult{
+    padding: 20px 10px;
+    &__param{
+      &-box{
+        flex-direction: column;
+      }
+    }
+    &__card{
+      &-line{flex-direction: column; align-items: center;}
+    }
+  }
+}

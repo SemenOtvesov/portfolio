@@ -1,0 +1,102 @@
+.contact {
+  display: flex; flex-direction: column; gap: 60px;
+
+  &__item {
+    display: flex; justify-content: space-between;
+
+    &-left {
+      width: fit-content;
+      display: flex; flex-direction: column; gap: 30px;
+    }
+  
+    &-right {
+      flex: 0 0 50%;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+
+    &-section {
+      display: flex; flex-direction: column; gap: 10px;
+
+      &-title {
+        color: $signature;
+      }
+    
+      &-text {
+        font-size: 1.125em;
+        &.bold{font-size: 1.25em; font-weight: 600;}
+      }
+    }
+  }
+
+  &__form{
+    &-checkbox {
+      padding: 10px;
+      transition: 0.3s;
+      background-color: #fff;
+      width: 32px; height: 32px;
+      border-radius: 10px;
+      border: 1px solid $stroke;
+      display: flex; align-items: center; justify-content: center;
+
+      & span{
+        display: block;
+        position: relative;
+        width: 10px; height: 10px;
+        cursor: pointer;
+
+        &::before, &::after{
+            top: 50%; left: 0;
+            position: absolute;
+            height: 2px; width: 100%;
+            transition: 0.3s ease;
+            background-color: #fff;
+            border-radius: 2px;
+            content: '';
+        }
+        &::after{transform: rotate(-45deg) translate(calc(30% - 1px), 100%)}
+        &::before{transform: rotate(45deg) translate(-10%, 80%); width: 75%;}
+      }
+
+      &.active{background-color: $mainBlue; border-color: $mainBlue;}
+
+      &-box{
+        display: flex; align-items: center; gap: 15px;
+      }
+    }
+    &-button{
+      padding: 20px;
+      width: 100%;
+      background-color: $mainBlue;
+      color: #fff;
+      font-weight: 600;
+      font-size: 20px;
+      border-radius: 10px;
+    }
+  }
+
+  &__map {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 991.98px){
+  .contact{
+    &__item-right{gap: 10px}
+  }
+}
+@media (max-width:767.98px){
+  .contact{
+    gap: 30px;
+    &__item{
+      flex-direction: column; gap: 30px;
+      &-right{gap: 20px;}
+    }
+  }
+  .mbHidden{display: none;}
+}
+@media (max-width: 479.98px){
+   
+}

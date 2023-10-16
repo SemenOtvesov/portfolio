@@ -1,0 +1,192 @@
+.delivery {
+  font-size: 16px;
+
+  display: flex; flex-direction: column; gap: 40px;
+
+  &__title {
+    font-size: 3em;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    display: flex; flex-direction: column; gap: 30px;
+    min-width: 0;
+
+    &-title {
+      font-weight: 600;
+      font-size: 1.75em;
+
+      &.ridePlace{
+        font-size: 1.25em;
+      }
+    }
+  
+    &-card {
+      display: flex; flex-direction: column; gap: 15px;
+      flex: 0 0 31%;
+
+      &-box {
+        display: flex; justify-content: space-between; gap: 40px
+      }
+
+      &-title {
+        color: $signature;
+      }
+    
+      &-text {
+        font-size: 1.125em;
+      }
+      
+    }
+  
+    &-text {
+      font-size: 1.125em;
+      &.ridePlace{width: 65%; &.image{flex: 0 0 45%; width: 45%;}}
+      &-box{
+        display: flex; justify-content: space-between; align-items: center;
+      }
+    }
+
+    &-image{
+      border-radius: 20px;
+      overflow: hidden;
+
+      &.big{flex: 0 0 31%;}
+      &.mini{flex: 0 0 22%;}
+
+      & picture{
+        display: block;
+        width: 100%; height: 100%;
+        position: relative;
+
+        & img{
+          position:absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-box{
+        display: flex; justify-content: space-between; gap: 40px;
+      }
+      &-text{margin-top: 30px; }
+    }
+
+    &-imageBox{
+      flex: 0 1 45%;
+      border-radius: 20px;
+      overflow: hidden;
+
+      & picture{
+        display: block; 
+        width: 100%; height: 100%;
+        position: relative;
+
+        & img{
+          position:absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1170px){
+  .delivery{
+    font-size: 14px;
+  }
+}
+@media (max-width: 991.98px){
+  .delivery{
+    gap: 30px;
+    &__title{margin: 0; font-size: 2em;}
+    &__item{
+      &-title{font-size: 1.5em;}
+      &-card{
+        flex: 0 0 45%;
+        &-box{
+          flex-direction: column; gap: 20px;
+        }
+      }
+      &-text-box{align-items:normal;}
+      &-image{
+        
+        &.big, &.mini{width: 100%; flex:auto}
+        &-box{flex-direction: column;}
+      }
+      &-imageBox{display: none;}
+      &-text.ridePlace.image{flex: 1 1;}
+      &-text.ridePlace{flex: 1 1; width: 100%;}
+    }
+  }
+}
+
+.swiper{
+  &__box{width: 100%;}
+  &-slide{
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 20px;
+    max-height: 23em;
+
+    &__box{display: flex; flex-direction: column; justify-content: space-between; height: 100%; width: 100%;}
+
+    &-name{
+      display: flex; gap: 20px; justify-content: center;
+
+      &-preview{
+        width: 1.125em; height: 1em;
+        display: flex; gap: 27%;
+        overflow: hidden;
+        & span{
+          display: block;
+          height: 100%;
+          width: 27%;
+          background-color: $mainBlue;
+          transform: rotate(10deg) translate(40%);
+        }
+      }
+      &-text{color: $signature;}
+    }
+    &-text{
+      height: 80%;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar{
+        width: 10px;
+        &-thumb{
+          background-color: $textColor;
+          border: 4px solid #fff;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  &-pagination{
+    &-box{
+      margin-top: 40px;
+      height: 17px;
+      position: relative;
+    }
+
+    &-bullet{
+      width: 17px; height: 17px;
+      &-active-prev{
+        transform: scale(1);
+      }
+    }
+  }
+}
+.mod-bullets-dynamic{
+  left: 50%;
+  transform: translate(-50%);
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+  .swiper-pagination-bullet{transition: 200ms transform, 200ms left; margin: 0 10px; position: relative;}
+}
