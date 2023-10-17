@@ -1,1 +1,1 @@
-Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit,JEST, React-Testing-Library, Axios, Webpack, Babel.
+Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit,JEST, React-Testing-Library, Axios, Webpack, Babel, Swiper.js
