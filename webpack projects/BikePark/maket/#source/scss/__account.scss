@@ -1,0 +1,414 @@
+.account{
+  
+  &__unduser{
+    display: flex; justify-content: center; align-items: center;
+    padding: 20px;
+  }
+
+  &__botton-reg{
+    font-size: 16px;
+    width: 70%;
+    margin: 0 auto;
+    &-box{
+      display: flex ; flex-direction: column; gap: 30px;
+    }
+    &-text{
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 500;
+    }
+  }
+}
+
+.account {
+
+  display: flex; flex-direction: column; gap: 30px;
+
+  &__param {
+    padding: 25px;
+    transition: 0.3s;
+    border-bottom: 2px solid $stroke; 
+    font-size: 1.125em;
+
+    flex: 1 1;
+    text-align: center;
+
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    &-box{
+      display: flex; align-items: center;
+    }
+
+    &.active{border-color: $mainBlue; color: $mainBlue;}
+  }
+
+  &__order {
+    position: relative;
+    padding: 25px 0;
+    cursor: pointer;
+    border-bottom: 1px solid $stroke;
+
+    &-box{
+      height: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+
+      &.visable{
+        height: fit-content;
+        opacity: 1;
+        pointer-events: all;
+      }
+      &.absenceOrder.visable{
+        text-align: center;
+        font-size: 2em;
+        padding-top: 20px;
+        color: $signature;
+      }
+    }
+
+    &.none{display: none;}
+
+    &-main{display: flex; justify-content: space-between; align-items: center;}
+
+    &-title, &-prise, &-data, &-state, &-status{
+      font-size: 1.125em;
+      font-weight: 600;
+      text-align: right;
+
+      &.title{
+        color: $signature;
+        font-weight: 500;
+        font-size: 1em;
+      }
+    }
+
+    &-title {
+      flex: 0 0 40%;
+      display: flex; gap: 10px; align-items: center;
+      text-align: left;
+    }
+  
+    &-arrow {
+      display: block;
+      position: relative;
+      transition: 0.3s;
+      width: 10px; height: 5px;
+      cursor: pointer;
+      &::before, &::after{
+          transition: 0.3s;
+          top: 50%; left: 0;
+          position: absolute;
+          height: 2px; width: 100%;
+          transition: 0.3s ease;
+          background-color: #000;
+          border-radius: 10px;
+          content: '';
+      }
+      &::before{transform: rotate(-45deg) translate(25%,100%)}
+      &::after{transform: rotate(45deg) translate(-25%,100%)}
+
+      &:hover{
+        &::before, &::after{background-color: $signature;}
+      }
+      &.active{transform: rotate(180deg);}
+    }
+  
+    &-data {
+      flex: 0 0 8%;
+    }
+  
+    &-prise {
+      flex: 0 0 8%;
+    }
+  
+    &-state {
+      flex: 0 0 10%;
+    }
+  
+    &-status {
+      flex: 0 0 14%;
+
+      &.processing, &.work, &.delivered, &.completed{padding: 10px 15px; border-radius: 6px; text-align: center;}
+
+      &.processing{
+        padding: 10px 15px;
+        color: $orange;
+        border: 2px solid $orange;
+      }
+      &.work{
+        padding: 10px 15px;
+        color: $green; 
+        border: 2px solid $green;
+      }
+      &.delivered{
+        padding: 10px 15px;
+        color: $yelow;
+        border: 2px solid $yelow;
+      }
+      &.completed{
+        padding: 10px 15px;
+        color: #000;
+        border: 2px solid #000;
+      }
+    }
+  
+    &-more {
+      
+      display: flex; flex-direction: column; gap: 15px;
+
+      height: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+
+      &.active{
+        margin-top: 10px;
+        padding: 20px 0 0 20px;
+        height: fit-content;
+        opacity: 1;
+        pointer-events: all;
+      }
+      
+      &-top {
+        display: flex; flex-direction: column; gap: 15px;
+        border-bottom: 1px solid $stroke;
+        border-top: 1px solid $stroke;
+        padding: 30px 0;
+
+        &-line {
+          display: flex; justify-content: space-between;
+        }
+
+        &-title, &-prise, &-quantity, &-fullPrise{&.title{color: $signature;} text-align: right;}
+      
+        &-title {
+          flex: 0 0 55%;
+          text-align: left;
+        }
+      
+        &-prise {
+          flex: 0 0 4%;
+        }
+      
+        &-quantity {
+          flex: 0 0 13%;
+        }
+      
+        &-fullPrise {
+          flex: 0 0 8%;
+        }
+      }
+    
+      &-bottom {
+        display: flex; flex-direction: column; gap: 20px;
+        &-result{
+          width: 30%;
+          display: flex; flex-direction: column; gap: 15px;
+          margin: 0 0 0 auto;
+          
+          &-item{display: flex; justify-content: space-between; }
+          &-text{
+            & span{font-size: 1.125em;}
+          }
+          &-title{color: $signature;}
+        }
+
+        &-left {
+          display: flex; flex-direction: column; gap: 15px ;
+        }
+      
+        &-right {
+          display: flex; gap: 20px;
+        }
+
+        &-main{
+          display: flex; justify-content: space-between;
+        }
+      
+        &-button {
+          margin: auto 0 0 0;
+          height: fit-content;
+          padding: 15px 40px;
+          display: block;
+          border: 2px solid $mainBlue;
+
+          &.white{background-color: #ffffff00; color: $mainBlue;}
+        }
+      }
+    }
+
+    &:nth-last-child(1){border: 0; margin-bottom: -20px;}
+  }
+
+  &__info{
+    &-line{
+      display: flex; justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    &-button{
+      padding: 15px 30px;
+    }
+    &-input{
+      transition: 0.3s;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      border: 1px solid $stroke;
+
+      &.disabled{
+        padding:  0;
+        background-color: #ffffff00;
+        border: 1px solid #00000000;
+      }
+    }
+  }
+}
+
+@media (max-width: 1170px){
+  .account{
+    &__order{
+      &-title{
+        flex: 0 0 20%;
+      }
+      &-status{flex: 0 0 20%;}
+      &-more-bottom{
+        gap: 30px;
+        &-right{flex-direction: column;}
+      }
+    }
+  }
+}
+@media (max-width: 991.98px){
+  .account{
+    gap: 20px;
+    font-size: 14px;
+    &__param{padding: 15px;}
+    &__order{
+      &-title{flex: 0 0 25%;}
+      &-prise{flex: 0 0 13%;}
+      &-status{
+        flex: 0 0 20%;
+        height: fit-content;
+
+        &.processing, &.work, &.delivered, &.completed{padding: 5px 10px; font-size: 12px;}
+      }
+      &-more{
+        &-top{gap: 10px; padding: 20px 0;}
+        &-bottom{
+          gap: 20px;
+          &-right{gap: 10px;}
+          &-button{padding: 10px 20px; font-size: 14px;}
+        }
+      }
+    }
+  }
+}
+@media (max-width:767.98px){
+  .account{
+    font-size: 10px;
+    gap: 10px;
+    &__param{padding: 5px; font-size: 10px; height: 100%; } 
+    &__order{
+      padding: 5px 0;
+      &-title, &-prise, &-data, &-state, &-status{
+        font-size: 0.8em;
+        &.title{font-size: 0.8em;}
+      }
+      &-data{display: none;}
+      &-status{
+        flex: 0 0 30%;
+        &.processing, &.work, &.delivered, &.completed{font-size: 8px;}
+      }
+      &:nth-last-child(1){margin-bottom: -10px;}
+
+      &-more{
+        &.active{padding: 0px; margin-top: 5px;}
+        &-top{
+          padding: 5px 0;
+          &-line{align-items: center;}
+          &-title{flex: 0 0 40%;}
+          &-quantity{flex: 0 0 16%;}
+        }
+        &-bottom{
+          &-result{width: 50%;}
+          &-button{padding: 5px; font-size: 8px; &.white{border-width: 1px;} margin: 0;}
+          &-left{gap: 10px; font-size: 8px; width: 60%;}
+          &-right{gap: 5px; margin: auto 0 0 0;}
+        }
+      }
+    }
+    &__info{
+      &-line{
+        flex-direction: column; gap: 15px;
+        margin-bottom: 20px;
+        & > .delivery__item-card{
+          gap: 10px;
+        }
+      }
+      &-button{
+        margin-top: -20px;
+        font-size: 1em;
+        width: 100%;
+        padding: 10px;
+      }
+      &-input{padding: 10px 10px;}
+    }
+  }
+}
+
+.orderDelete{
+  display: flex; flex-direction: column; gap: 30px;
+
+  &__button{
+    border: 2px solid $mainBlue;
+    &.white{background-color: #fff; color: $mainBlue;}
+  }
+  &__text{
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  position:absolute;
+  top: 50%; left: 50%;
+  width: 35%; height: fit-content;
+  max-width: 640px;
+  background-color: #fff;
+
+  transition: 0.3s;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 101;
+  padding: 20px;
+  border-radius: 15px;
+
+  &.active{
+    transform: translate(-50%, -50%);
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1170px){
+  .orderDelete{
+    width: 50%;
+  }
+}
+@media (max-width: 991.98px){
+  .orderDelete{
+    width: 70%;
+    &__text{font-size: 24px;}
+  }
+}
+@media (max-width:767.98px){
+  .orderDelete{
+    width: 90%;
+    gap: 15px;
+    &__button{padding: 10px; font-size: 14px;}
+    &__text{font-size: 18px;}
+  }
+}
+@media (max-width: 479.98px){
+   
+}
