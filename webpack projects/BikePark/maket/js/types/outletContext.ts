@@ -1,0 +1,1 @@
+export type ToutletContext = {scrollWidth: number, userUid: string}
