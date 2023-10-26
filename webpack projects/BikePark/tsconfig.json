@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+        "@js/*": ["maket/js/*"],
+        "@maket/*": ["maket/*"],
+        "@docs/*": ["docs/*"],
+        "@localTypes/*": ["maket/js/types/*"],
+        "@state/*": ["maket/js/state/*"],
+
+        "@components/*": ["maket/js/components/*"],
+        "@mainComponents/*": ["maket/js/components/mainComponents/*"],
+        "@middleComponents/*": ["maket/js/components/middleComponents/*"],
+        "@componentModules/*": ["maket/js/components/componentModules/*"],
+
+        "@mainFunctions/*": ["maket/js/mainFunctions/*"],
+        "@middleFunctions/*": ["maket/js/middleFunctions/*"],
+
+        "@events/*": ["maket/js/mainFunctions/events/*"],
+        "@firebaseFolder/*": ["maket/js/firebaseFolder/*"],
+    }
+  },
+}
