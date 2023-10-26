@@ -1,0 +1,29 @@
+$textColor: #14233D;
+$textTabAndInput: #737B98;
+$signature: #ABB1C5;
+$stroke: #DDE3EB;
+$background: #F2F4F7;
+
+$mainBlue: #297FFF;
+$orange: #FF6B00;
+$yelow: #EDAB00;
+$green: #28B737;
+$redLine: #F38181;
+
+
+@import "____initialStyle";
+@import "__generalElements";
+@import "___header";
+@import "___nav";
+@import "__main";
+@import "__calendar";
+@import "__searchResult";
+@import "__rent";
+@import "__delivery";
+@import "__contact";
+@import "__loginPopap";
+@import "__account";
+@import "__extendLease";
+@import "__invLinkRoute";
+@import "_footer";
+@import "__fonts";
