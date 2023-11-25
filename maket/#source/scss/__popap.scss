@@ -1,0 +1,125 @@
+.popap {
+    &-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        & span {
+            display: block;
+            position: relative;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            &::before,
+            &::after {
+                transition: 0.3s;
+                top: 50%;
+                left: 0;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                transition: 0.3s ease;
+                background-color: darkGray;
+                border-radius: 2px;
+                content: '';
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+        & span:hover {
+            &::before,
+            &::after {
+                background-color: #000;
+            }
+        }
+    }
+
+    &-login {
+        position: relative;
+        z-index: 101;
+        background-color: $background;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__title {
+            font-weight: 700;
+            font-size: 1.25em;
+            padding-bottom: 20px;
+        }
+
+        &__button {
+            padding: 10px 20px;
+            min-width: 20%;
+            border-radius: 10px;
+            background-color: $liteGreen;
+            font-weight: 600;
+
+            &-box {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                position: relative;
+            }
+
+            &.reg {
+                background-color: $darkGreen;
+                color: $background;
+            }
+        }
+        &__err {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $red;
+            z-index: 10;
+            border-radius: 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $background;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .popap {
+        &-login {
+            width: 80%;
+        }
+    }
+}
+@media (max-width: 767.98px) {
+    .popap {
+        &-close {
+            top: 10px;
+            right: 10px;
+        }
+        &-login {
+            gap: 10px;
+            padding: 10px;
+            font-size: 12px;
+            width: 90%;
+            &__title {
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+@media (max-width: 479.98px) {
+}

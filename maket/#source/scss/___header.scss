@@ -1,0 +1,61 @@
+.header {
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 0px 10px #00000028;
+
+    &__logo {
+        height: 100%;
+        aspect-ratio: 2/1;
+    }
+    &__user {
+        &-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &-button {
+            font-size: 1em;
+            background-color: $background;
+            padding: 10px;
+            border-radius: 20px;
+            transition: 0.3s;
+
+            &.green {
+                color: $liteGreen;
+                background-color: $darkGreen;
+                &:hover {
+                    background-color: $darkGreen;
+                }
+            }
+            &:hover {
+                opacity: 0.8;
+                background-color: #f1ebeb;
+            }
+        }
+
+        &-text {
+        }
+
+        &-exit {
+            font-size: 1.25em;
+            transition: 0.3s;
+            background-color: #00000000;
+            &:hover {
+                color: #a9ec18;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .header {
+        font-size: 12px;
+        &__user-button {
+            padding: 7px;
+        }
+    }
+}
