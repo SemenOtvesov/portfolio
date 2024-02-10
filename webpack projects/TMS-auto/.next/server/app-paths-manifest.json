@@ -1,0 +1,19 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/page": "app/page.js",
+  "/info/page": "app/info/page.js",
+  "/[...not_found]/page": "app/[...not_found]/page.js",
+  "/carsFromKorea/page": "app/carsFromKorea/page.js",
+  "/carsFromJapan/page": "app/carsFromJapan/page.js",
+  "/readAuctionList/page": "app/readAuctionList/page.js",
+  "/statisticsJapan/page": "app/statisticsJapan/page.js",
+  "/contacts/page": "app/contacts/page.js",
+  "/registrationOfACarFromAnAuction/page": "app/registrationOfACarFromAnAuction/page.js",
+  "/statisticsKorea/page": "app/statisticsKorea/page.js",
+  "/statisticsKorea/[brand]/page": "app/statisticsKorea/[brand]/page.js",
+  "/statisticsJapan/[brand]/page": "app/statisticsJapan/[brand]/page.js",
+  "/statisticsJapan/[brand]/[model]/page": "app/statisticsJapan/[brand]/[model]/page.js",
+  "/statisticsKorea/[brand]/[model]/page": "app/statisticsKorea/[brand]/[model]/page.js",
+  "/statisticsKorea/[brand]/[model]/[lot]/page": "app/statisticsKorea/[brand]/[model]/[lot]/page.js",
+  "/statisticsJapan/[brand]/[model]/[lot]/page": "app/statisticsJapan/[brand]/[model]/[lot]/page.js"
+}

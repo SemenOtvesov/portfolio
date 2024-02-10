@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "preserve",
+        "baseUrl": "./",
+        "paths": {
+            "@app/*": ["app/*"],
+            "@docs/*": ["docs/*"],
+            "@ts/*": ["ts/*"],
+            "@locTypes/*": ["ts/locTypes/*"],
+            "@store/*": ["ts/store/*"],
+            "@components/*": ["ts/components/*"],
+            "@firebaseInit": ["ts/firebase/init"]
+        },
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ]
+    },
+    "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "next.config.js"],
+    "exclude": ["node_modules"]
+}

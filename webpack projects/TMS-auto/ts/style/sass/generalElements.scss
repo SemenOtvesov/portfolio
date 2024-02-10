@@ -1,0 +1,111 @@
+.body__backblur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.65);
+    z-index: 100;
+    opacity: 1;
+    pointer-events: all;
+}
+
+picture {
+    position: relative;
+    display: block;
+    & img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+.errorDownload {
+    background: url('./errorDownload.svg') center/auto 80% no-repeat;
+    & img {
+        opacity: 0;
+    }
+}
+.loading-img.loading-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: $background;
+    z-index: 3;
+    border-radius: 5px;
+
+    & .img-mask {
+        left: auto;
+        top: auto;
+        height: 50%;
+        aspect-ratio: 1 / 1;
+        width: auto;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        display: inline-block;
+        border-top: 3px solid $liteGreen;
+        border-right: 3px solid transparent;
+        animation: rotation 1s linear infinite;
+    }
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    & img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+}
+.img-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 10px;
+        &-thumb {
+            border: 3px solid $background;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+    }
+}
+
+button {
+    transition: 0.3s;
+    opacity: 1;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+
+input[type='number'],
+input[type='number']:hover,
+input[type='number']:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
