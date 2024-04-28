@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react",
+        "baseUrl": "./",
+        "paths": {
+            "@app/*": ["maket/app/*"],
+            "@maket/*": ["maket/*"],
+            "@docs/*": ["docs/*"],
+            "@loсTypes/*": ["maket/app/loсTypes/*"],
+            "@state/*": ["maket/app/state/*"],
+
+            "@components/*": ["maket/app/components/*"],
+            "@mainComponents/*": ["maket/app/components/mainComponents/*"],
+            "@layoutComponents/*": ["maket/app/components/layoutComponents/*"],
+            "@helperComponents/*": ["maket/app/components/helperComponents/*"],
+
+            "@helpers/*": ["maket/app/helpers/*"],
+            "@hooks/*": ["maket/app/hooks/*"],
+            "@middleFunctions/*": ["maket/app/middleFunctions/*"],
+
+            "@firebaseInit": ["maket/app/firebase/firebaseInit"]
+        }
+    }
+}
