@@ -24,6 +24,7 @@
 <br>
 [@FortAero_bot](https://t.me/FortAero_bot) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, vanilla-calendar-pro)
 [@durakwithton_bot](https://t.me/durakwithton_bot) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, sockjs, swiper, pixi.js, gsap)
+
 ---
 **Мои профессиональные навыки:**
 - css, sass в синтаксисе scss, html5, БЭМ, адаптивная верстка , css-in-js
