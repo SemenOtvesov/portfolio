@@ -15,11 +15,11 @@
 - Ссылка на хостинг
 ---
 **Ссылки на коммерческие проекты код которых нельзя разглашать ввиду соглашений**
-**Сайты**
+**Сайты: **
 <br>
 https://mazekeeper.com - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, Core UI, Slick Slider, Swiper, react-oauth, sentry, chart.js, dotenv, framer-motion, vanilla-calendar-pro, simplebar)
 <br><br>
-**Telegram Mini Aps**
+**Telegram Mini Aps: **
 <br>
 @FortAero_bot - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, vanilla-calendar-pro)
 @durakwithton_bot - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, sockjs, swiper, pixi.js, gsap)
