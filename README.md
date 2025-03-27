@@ -23,6 +23,7 @@
 **Telegram Mini Aps:**
 <br>
 [@FortAero_bot](https://t.me/FortAero_bot) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, vanilla-calendar-pro)
+<br>
 [@durakwithton_bot](https://t.me/durakwithton_bot) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, sockjs, swiper, pixi.js, gsap)
 
 ---
