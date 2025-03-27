@@ -18,7 +18,7 @@
 <br>
 **Сайты:**
 <br>
-[@durakwithton_bot](https://t.me/durakwithton_bot) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, Core UI, Slick Slider, Swiper, react-oauth, sentry, chart.js, dotenv, framer-motion, vanilla-calendar-pro, simplebar)
+[mazekeeper.com](https://mazekeeper.com) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, Core UI, Slick Slider, Swiper, react-oauth, sentry, chart.js, dotenv, framer-motion, vanilla-calendar-pro, simplebar)
 <br><br>
 **Telegram Mini Aps:**
 <br>
