@@ -33,7 +33,10 @@
 - REST API, CORS, SOLID, KISS, DRY
 - react, redux (thunk, saga, toolkit, RTK Query)
 - Next.js
-- Material UI
+- D3.js, plotly.js, react grid layout
+- Material UI, Emotion, Mantine
+- Framer-motion
+- Swiper.js, Chart.js
 - SPA(single page application)
 - webpack, prettier, eslint
 - firebase(hosting, realtime database, authentication, storage)
