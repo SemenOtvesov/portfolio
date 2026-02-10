@@ -20,7 +20,7 @@
 <br>
 [mazekeeper.com](https://mazekeeper.com) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, Core UI, Slick Slider, Swiper, react-oauth, sentry, chart.js, dotenv, framer-motion, vanilla-calendar-pro, simplebar)
 <br><br>
-[https://platform-proekt.com/) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, Core UI, Slick Slider, Swiper, react-oauth, sentry, chart.js, dotenv, framer-motion, vanilla-calendar-pro, simplebar)
+[platform-proekt.com](https://platform-proekt.com/) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, Core UI, Slick Slider, Swiper, react-oauth, sentry, chart.js, dotenv, framer-motion, vanilla-calendar-pro, simplebar)
 <br><br>
 **Telegram Mini Aps:**
 <br>
