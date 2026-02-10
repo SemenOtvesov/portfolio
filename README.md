@@ -20,9 +20,11 @@
 <br>
 [mazekeeper.com](https://mazekeeper.com) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, Core UI, Slick Slider, Swiper, react-oauth, sentry, chart.js, dotenv, framer-motion, vanilla-calendar-pro, simplebar)
 <br><br>
+[https://platform-proekt.com/) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, Core UI, Slick Slider, Swiper, react-oauth, sentry, chart.js, dotenv, framer-motion, vanilla-calendar-pro, simplebar)
+<br><br>
 **Telegram Mini Aps:**
 <br>
-[@FortAero_bot](https://t.me/FortAero_bot) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, vanilla-calendar-pro)
+[@FortAero_bot](https://t.me/FortAero_bot) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Next.js, Redux Toolkit, React Hook Form, date-fns,  Apollo Client, graphql ws, material react table, i18n, zod, Webpack, Babel, Eslint, Prettier, Emotion Styled, vanilla-calendar-pro)
 <br>
 [@durakwithton_bot](https://t.me/durakwithton_bot) - (Стэк: SCSS(SASS), HTML, JavaScript, TypeScript, React, Redux Toolkit, Axios, Webpack, Babel, Eslint, Prettier, Emotion Styled, sockjs, swiper, pixi.js, gsap)
 
